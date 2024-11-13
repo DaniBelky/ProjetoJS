@@ -1,16 +1,48 @@
-let total = 0;
-let itemCount = 0;
+    //nav bar
+function toggleMenu() {
+    var navbar = document.getElementById("navbar");
+    navbar.classList.toggle("ativo");
+}
 
-function addToCart(productName, productPrice) {
+  
+function showTab(tabName) {
+   
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => tab.classList.remove('active'));
+
+
+    document.getElementById(tabName).classList.add('active');
+    event.currentTarget.classList.add('active');
+
+    window.history.replaceState(null,null, `?tab=${tabName}`);
+}
+
+let total  = 0;
+let itemcount = 0;
+
+  // recebe o preço e o nome do produto no carrinho
+function addToCart(productName, productPrice){
     const cartItems = document.getElementById('cartItems');
     const item = document.createElement('li');
     item.textContent = `${productName} - R$${productPrice}`;
     cartItems.appendChild(item);
-    const productPriceRegex = productPrice.replace(',', '')
-    total += parseFloat(productPriceRegex).toFixed(3);
-    document.getElementById('totalPrice').textContent = `Total: R$${total.toString().replace(/(\d)(\d{2})$/, "$1,$2")}`;
 
-    // Incrementa a contagem de itens e exibe no ícone do carrinho
+   
+    const productPriceNumber = parseFloat(productPrice.replace(/[^\d,]/g, '').replace(',', '.'));
+
+
+    total += productPriceNumber;
+
+    const formattedTotal = total.toFixed(2)
+        .replace('.', ',')               
+        .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); 
+
+    document.getElementById('totalPrice').textContent = `Total: R$${formattedTotal}`;
+
     itemCount++;
     document.getElementById('cartCount').textContent = itemCount;
 }

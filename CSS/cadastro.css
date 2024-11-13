@@ -1,17 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
-@import url('./main.css');
+@import url("./main.css");
 
-/* .container {
-    max-width: 400px;
-    background-color: white;
-    padding: 20px;
-    margin: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
-} */
-
-/* Container */
 .container {
     max-width: 600px;
     margin: auto;
@@ -37,15 +27,11 @@ label {
 }
 
 /* Inputs */
-input[type="text"],
 input[type="date"],
-input[type="tel"],
+input[type="text"],
 input[type="email"],
+input[type="tel"],
 input[type="password"],
-.DT_Nascimento,
-.Endereço,
-.Produto,
-.number,
 select {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -53,23 +39,40 @@ select {
     font-size: 1rem;
     padding: 10px 15px;
     width: 100%;
-    max-width: 300px;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
 }
 
-.DT_Nascimento:hover,
-.Endereço:hover,
-.Produto:hover,
-.number:hover {
+/* Alinhar inputs lado a lado */
+.input-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Permite quebra de linha */
+}
+
+.input-field {
+    flex: 1;
+    min-width: 220px; /* Garante que os campos não fiquem muito pequenos */
+}
+
+/* Estilos ao passar o mouse */
+input[type="date"]:hover,
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="password"]:hover,
+select:hover {
     border-color: #0056b3;
     background-color: #f7f7f7;
 }
 
-.DT_Nascimento:focus,
-.Endereço:focus,
-.Produto:focus,
-.number:focus {
+/* Estilos ao focar */
+input[type="date"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+select:focus {
     border-color: #0056b3;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
