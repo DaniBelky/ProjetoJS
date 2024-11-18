@@ -2,89 +2,8 @@
 
 @import url("./main.css");
 
-.container {
-  max-width: 400px;
-  background-color: white;
-  padding: 20px;
-  margin: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center;
-}
-
-
-label {
-  display: block;
-  margin-top: 10px;
-}
-
-select,
-input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
-} */
-
-.container {
-  max-width: 600px;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1{
-  text-align: center;
-  color: #333;
-} 
-  
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-input[type="submit"] {
-  background: #28a745;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-input[type="submit"]:hover {
-  background: #218838;
-}
-
-/*-----editado por Esmael
-   a aparte de baixo------*/
-
-
 /* Título e descrição */
-h1 {
+.Fale {
   margin: auto;
   text-align: center;
   margin-top: 2rem;
@@ -105,14 +24,15 @@ p {
   font-size: 1rem;
 }
         
-form label {
+.Formulario .Form {
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
 
-form input[type="text"],
-form input[type="email"] {
+.Formulario  .nome,
+.Formulario  .email,
+.Formulario  .mensagem{
   padding: 10px 3px 10px 3px;
   font-size: 1rem;
   border: 1px solid #ddd;
@@ -121,7 +41,7 @@ form input[type="email"] {
 }
 
 
-form input[type="submit"] {
+.Formulario  .button{
   padding: 0.75rem;
   font-size: 1rem;
   background-color: #004aad;
@@ -132,12 +52,12 @@ form input[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-form input[type="submit"]:hover {
+.Formulario .button:hover {
   background-color: #00308f;
 }
         
 /* Formulário de contato */
-form {
+.Formulario  {
   display: flex;
   flex-direction: column;
   max-width: 600px;
@@ -166,7 +86,7 @@ color: #555;
 
 /* Responsividade */
 
-form {
+.Formulario  {
   width: 90%;
   padding: 1rem;
 }

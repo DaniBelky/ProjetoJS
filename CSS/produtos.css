@@ -2,18 +2,6 @@
 
 @import url('./main.css');
 
-
-/* card de compras */
-
-.conteiner {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    /* max-width: 1200px;  */
-    margin: auto;
-}
-
 .card {
     background-color: #fff;
     border-radius: 10px;
@@ -133,7 +121,7 @@
 }
 
 .cart-item {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
     font-size: 1.5em;
@@ -152,7 +140,7 @@
     right: -10px;
 }
 
-.cart-item img {
+.cart-item .carrinho {
     color: #fff;
     padding-bottom: 20px;
     width: 30px;

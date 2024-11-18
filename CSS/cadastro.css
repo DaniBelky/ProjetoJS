@@ -2,6 +2,8 @@
 
 @import url("./main.css");
 
+
+
 .container {
     max-width: 600px;
     margin: auto;
@@ -19,7 +21,7 @@ h1 {
 }
 
 /* Labels */
-label {
+.Form {
     display: block;
     margin-top: 15px;
     font-weight: bold;

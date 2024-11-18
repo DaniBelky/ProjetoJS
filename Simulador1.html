@@ -26,7 +26,7 @@
             <h1>Simulador de consumo de energia</h1>
 
             <label for="equipamento">Equipamento</label>
-            <select id="equipamento">
+            <select id="equipamento" class="produtos">
                 <option value="0">Selecione</option>
                 <option value="1500"> Ar-condicionado(1500W)</option>
                 <option value="120">Geladeira(120W)</option>
@@ -36,7 +36,7 @@
             </select>
 
             <label for="horas">Horas de usa por dia</label>
-            <input type="number" id="horas" placeholder="horas de uso">
+            <input type="number" id="horas" placeholder="horas de uso" max="24" class="number">
 
             <button onclick="calcularConsumo()">Calcular Consumo</button>
 
