@@ -7,16 +7,11 @@ function formatarCPF(campo, input){
     cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
 
     campo.value = cpf;
-
-  
 }
 
 function apenasNumeros(input) {
     input.value = input.value.replace(/\D/g, '');
 }
-
-    
-
 
 function validarFormulario() {
   

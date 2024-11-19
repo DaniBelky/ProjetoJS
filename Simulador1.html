@@ -28,15 +28,31 @@
             <label for="equipamento">Equipamento</label>
             <select id="equipamento" class="produtos">
                 <option value="0">Selecione</option>
-                <option value="1500"> Ar-condicionado(1500W)</option>
-                <option value="120">Geladeira(120W)</option>
-                <option value="60">Lâmpada LED(60W)</option>
-                <option value="2000">Chuveiro Elétrico(2000W)</option>
-                <option value="33500">Residencial - 3,35kWp</option>
+                <!-- Residencial -->
+                <option value="3350">Residencial - 3,35kWp (3350W)</option>
+                <option value="10350">Residencial - 10,35kWp (10350W)</option>
+                <option value="855">Residencial - 0,855kWp (855W)</option>
+                <option value="1000">Residencial - 1,0kWp (1000W)</option>
+                <option value="2600">Residencial - 2,6kWp (2600W)</option>
+                <option value="1600">Residencial - 1,6kWp (1600W)</option>
+                <!-- Empresarial -->
+                <option value="8250">Empresarial - 8,25kWp (8250W)</option>
+                <option value="15600">Empresarial - 15,6kWp (15600W)</option>
+                <option value="50200">Empresarial - 50,2kWp (50200W)</option>
+                <option value="36000">Empresarial - 36,0kWp (36000W)</option>
+                <option value="47500">Empresarial - 47,5kWp (47500W)</option>
+                <option value="155000">Empresarial - 155,0kWp (155000W)</option>
+                <!-- Agronegócio -->
+                <option value="5400">Agronegócio - 5,4kWp (5400W)</option>
+                <option value="12200">Agronegócio - 12,2kWp (12200W)</option>
+                <option value="25400">Agronegócio - 25,4kWp (25400W)</option>
+                <option value="20000">Agronegócio - 20,0kWp (20000W)</option>
+                <option value="35000">Agronegócio - 35,0kWp (35000W)</option>
+                <option value="75000">Agronegócio - 75,0kWp (75000W)</option>
             </select>
 
-            <label for="horas">Horas de usa por dia</label>
-            <input type="number" id="horas" placeholder="horas de uso" max="24" class="number">
+            <label for="horas">Horas de uso por dia</label>
+            <input type="number" id="horas" placeholder="Horas de uso" max="24" class="number">
 
             <button onclick="calcularConsumo()">Calcular Consumo</button>
 
