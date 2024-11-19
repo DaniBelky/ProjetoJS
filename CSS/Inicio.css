@@ -15,21 +15,18 @@
 
 .slide1-subtitle {
     margin: 30px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     font-size: 28px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .slide1-title {
     margin: 40px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     font-size: 80px;
     font-family: "Roboto Condensed";
 }
 
 .slide2-subtitle {
     margin: 40px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     font-size: 30px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -49,7 +46,7 @@
     font-family: "Roboto Condensed";
 }
 
-.slide3-text {
+.slide3-subtitle {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     font-size: 23px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -90,7 +87,6 @@ div>h2 {
     margin-bottom: 10px;
     justify-content: center;
     display: flex;
-    padding-left: 0px;
 }
 
 .Galeria p {
@@ -102,18 +98,9 @@ div>h2 {
     font-size: larger;
 }
 
-.Galeria>div {
-    display: flex;
-    flex-direction: column;
-}
-
 .Galeria>div>a {
     display: flex;
     justify-content: center;
-}
-
-.Galeria>div>a>button {
-    padding: 15 px 20px;
 }
 
 .content-odd>.Galeria:nth-child(odd) {

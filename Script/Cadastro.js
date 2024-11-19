@@ -10,9 +10,9 @@ function formatarCPF(campo, input) {
 }
 
 function formartarNumeroTelefone(input) {
-    let telefone = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    let telefone = input.value.replace(/\D/g, ''); //caracteres não numericos 
 
-    // Aplica a formatação
+    //formatação
     if (telefone.length <= 2) {
         telefone = telefone.replace(/(\d{2})/, '($1');
     } else if (telefone.length <= 6) {
@@ -37,7 +37,6 @@ function validarFormulario() {
 
     let valido = true;
 
-    // Limpa mensagens de erro
     document.querySelectorAll('.error').forEach(el => el.textContent = '');
 
     // Validação de Nome
@@ -68,7 +67,7 @@ function validarFormulario() {
         document.getElementById('erro-telefone').textContent = 'O campo Telefone é obrigatório.';
         valido = false;
     } else if (telefone.length < 15) {
-        document.getElementById('erro-telefone').textContent = 'Telefone inválido. Use o formato (11) 987654321.';
+        document.getElementById('erro-telefone').textContent = 'Telefone inválido. Use o formato (11) 98765-4321.';
         valido = false;
     }
 
@@ -115,18 +114,3 @@ function validarFormulario() {
     return valido;
 }
 
-
-
-// Função para formatação do CPF
-function formatarCPF(campo) {
-    let valor = campo.value.replace(/\D/g, ''); // Remove tudo o que não for número
-    if (valor.length <= 11) {
-        valor = valor.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-    }
-    campo.value = valor;
-}
-
-// Função para permitir apenas números no campo de telefone
-function apenasNumeros(campo) {
-    campo.value = campo.value.replace(/\D/g, '');
-}
