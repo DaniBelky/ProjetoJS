@@ -110,7 +110,90 @@ function validarFormulario() {
         document.getElementById('erro-confirmar-senha').textContent = 'As senhas não coincidem.';
         valido = false;
     }
+    
+    if (validarDocumento(document.getElementById("cpf").value.replace(/\D/g, '')) !== true) {
+        valido = false
+    }
 
     return valido;
 }
 
+async function validarDocumento(documento) {
+    const url = validarTipoDocumento(documento);
+    if (documento.length === 14) {
+        if (!url) {
+            console.log("Documento inválido. Deve ter 11 (CPF) ou 14 (CNPJ) dígitos.");
+            return;
+        } 
+    }
+    
+    try {
+        let data = {}
+        if (documento.length === 14) {
+            const response = await fetch(url);
+            data = await response.json();
+        } else if (url == false){
+                data.code = 400;
+            } else {
+                data = {code:200};
+            }
+        if (data.code !== 400) {
+            // alert(`O ${documento.length === 11 ? 'CPF' : 'CNPJ'} é válido!`);
+            return true
+        } else {
+            alert(`O ${documento.length === 11 ? 'CPF' : 'CNPJ'} é inválido.`);
+            return false
+        }
+    } catch (error) {
+        console.error("Erro ao consultar o documento:", error);
+    }
+}
+
+function validarTipoDocumento(documento) {
+    if (documento.length === 11) {
+        return validarCPF(documento);
+    } else if (documento.length === 14) {
+        return `https://open.cnpja.com/office/${documento}`;
+    } else {
+        return null
+        
+    }
+}
+
+function validarCPF(cpf) {
+    cpf = cpf.replace(/\D/g, '');
+
+    if (cpf.length !== 11) {
+        return false;
+    }
+
+    if (/^(\d)\1{10}$/.test(cpf)) {
+        return false;
+    }
+
+    let soma = 0;
+    let peso = 10;
+    for (let i = 0; i < 9; i++) {
+        soma += parseInt(cpf.charAt(i)) * peso--;
+    }
+    let primeiroDigito = (soma * 10) % 11;
+    if (primeiroDigito === 10 || primeiroDigito === 11) {
+        primeiroDigito = 0;
+    }
+
+    soma = 0;
+    peso = 11;
+    for (let i = 0; i < 10; i++) {
+        soma += parseInt(cpf.charAt(i)) * peso--;
+    }
+    let segundoDigito = (soma * 10) % 11;
+    if (segundoDigito === 10 || segundoDigito === 11) {
+        segundoDigito = 0;
+    }
+
+    if (primeiroDigito === parseInt(cpf.charAt(9)) && segundoDigito === parseInt(cpf.charAt(10))) {
+        return true; 
+    } else {
+        return false;
+    }
+}
