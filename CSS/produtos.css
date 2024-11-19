@@ -113,11 +113,10 @@
 }
 
 .close-cart {
-    color: #007BFF;
+    color: #007bff;
     text-decoration: none;
+    font-size: 14px;
     cursor: pointer;
-    display: block;
-    margin-top: 10px;
 }
 
 .cart-item {
@@ -145,4 +144,19 @@
     padding-bottom: 20px;
     width: 30px;
     height: 30px;
+}
+
+.buy{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-conteinier{
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }

@@ -20,7 +20,8 @@
                 <li><a href="contato.html">Contato</a></li>
                 <li> <a href="Simulador1.html">Simulador de economia</a></li>
                 <div class="cart-item" onclick="openCart()">
-                    <img src="Imagens/shoppingcartfull_compras_carr_13340.png" class="carrinho">
+                    <img src="Imagens/shoppingcartfull_compras_carr_13340.png"
+                        class="carrinho">
                     <span id="cartCount" class="cart-count">0</span>
                 </div>
             </ul>
@@ -387,10 +388,15 @@
                     <!-- none -->
                 </ul>
                 <p id="totalPrice">total: R$0,00</p>
-                <a href="Compra.html">
-                <button href="Compra.html" id="buyButton" onclick="proceedToCheckout()">Comprar</button></a>
-                <a href="#" class="close-cart" onclick="closeCart()"> Fechar
-                    Carrinho</a>
+                <div class="button-conteinier">
+                    <a href="Compra.html">
+                        <button href="Compra.html" id="buyButton"
+                            onclick="proceedToCheckout()"
+                            class="buy">Comprar</button>
+                    </a>
+                    <a href="#" class="close-cart" onclick="closeCart()"> Fechar
+                        Carrinho</a>
+                </div>
             </div>
 
             <script src="Script/Produto.js"></script>
