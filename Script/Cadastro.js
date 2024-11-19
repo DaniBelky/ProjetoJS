@@ -9,15 +9,26 @@ function formatarCPF(campo, input) {
     campo.value = cpf;
 }
 
-function apenasNumeros(input) {
-    input.value = input.value.replace(/\D/g, '');
+function formartarNumeroTelefone(input) {
+    let telefone = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+
+    // Aplica a formatação
+    if (telefone.length <= 2) {
+        telefone = telefone.replace(/(\d{2})/, '($1');
+    } else if (telefone.length <= 6) {
+        telefone = telefone.replace(/(\d{2})(\d{4})/, '($1) $2');
+    } else {
+        telefone = telefone.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    }
+
+    input.value = telefone; 
 }
 
 function validarFormulario() {
     const nome = document.getElementById('nome').value.trim();
     const dataNascimento = document.getElementById('data-nascimento').value.trim();
     const cpf = document.getElementById('cpf').value.trim();
-    const telefone = document.getElementById('telefone').value.trim();
+    const telefone = document.getElementById('telefone').value;
     const endereco = document.getElementById('endereço').value.trim();
     const email = document.getElementById('email').value.trim();
     const produto = document.getElementById('equipamento').value.trim();
@@ -52,11 +63,11 @@ function validarFormulario() {
     }
 
     // Validação de Telefone
-    const telefoneRegex = /^\(\d{2}\) \d{9}$/; // Exemplo: (11) 987654321
+    const telefoneRegex = /(\d{2})(\d{5})-(\d{4})/; // Exemplo: (11) 987654321
     if (telefone === '') {
         document.getElementById('erro-telefone').textContent = 'O campo Telefone é obrigatório.';
         valido = false;
-    } else if (!telefoneRegex.test(telefone)) {
+    } else if (telefone.length < 15) {
         document.getElementById('erro-telefone').textContent = 'Telefone inválido. Use o formato (11) 987654321.';
         valido = false;
     }

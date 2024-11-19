@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastro Vip</title>
         <link rel="stylesheet" href="CSS/cadastro.css">
     </head>
-
     <body>
         <nav>
             <ul class="header-ul">
@@ -24,44 +22,66 @@
         <div class="container">
 
             <h1>Cadastro VIP para Revendedores</h1>
-            <form id="formCadastro" action="/enviar-cadastro" method="post" onsubmit="return validarFormulario()">
+            <form id="formCadastro" action="/enviar-cadastro" method="post"
+                onsubmit="return validarFormulario()">
                 <!-- Nome -->
                 <label for="nome" class="form-label">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Nome completo" class="form-input" aria-label="Nome completo">
+                <input type="text" id="nome" name="nome"
+                    placeholder="Nome completo" class="form-input"
+                    aria-label="Nome completo">
                 <span class="error" id="erro-nome"></span><br>
-            
+
                 <!-- Data de Nascimento -->
-                <label for="data-nascimento" class="form-label">Data de Nascimento:</label>
-                <input type="date" id="data-nascimento" name="data-nascimento" class="form-input" min="1900-01-01" aria-label="Data de nascimento">
+                <label for="data-nascimento" class="form-label">Data de
+                    Nascimento:</label>
+                <input type="date" id="data-nascimento" name="data-nascimento"
+                    class="form-input" min="1900-01-01"
+                    aria-label="Data de nascimento">
                 <span class="error" id="erro-data-nascimento"></span><br>
-            
+
                 <!-- CPF e Telefone -->
                 <div class="input-group">
                     <div class="input-field">
                         <label for="cpf" class="form-label">CPF ou CNPJ:</label>
-                        <input type="text" id="cpf" name="cpf" maxlength="14" placeholder="Ex: 000.000.000-00" class="form-input number" oninput="formatarCPF(this)" aria-label="CPF ou CNPJ">
+                        <input type="text" id="cpf" name="cpf" maxlength="14"
+                            placeholder="Ex: 000.000.000-00"
+                            class="form-input number"
+                            oninput="formatarCPF(this)"
+                            aria-label="CPF ou CNPJ">
                         <span class="error" id="erro-cpf"></span>
                     </div>
                     <div class="input-field">
-                        <label for="telefone" class="form-label">Telefone:</label>
-                        <input type="tel" id="telefone" name="telefone" maxlength="11" pattern="[0-9]{10,11}" placeholder="Ex: 11987654321" class="form-input number" oninput="apenasNumeros(this)" aria-label="Telefone">
+                        <label for="telefone"
+                            class="form-label">Telefone:</label>
+                        <input type="text" id="telefone" name="telefone"
+                            maxlength="11"
+                            placeholder="Ex: 11987654321"
+                            class="form-input number"
+                            aria-label="Telefone"
+                            onkeyup="formartarNumeroTelefone(this)">
                         <span class="error" id="erro-telefone"></span>
                     </div>
                 </div>
-            
+
                 <!-- Endereço -->
                 <label for="endereço" class="form-label">Endereço:</label>
-                <input type="text" id="endereço" name="endereço" placeholder="Ex: Rua 10 lote 01 Cj B" class="form-input" aria-label="Endereço">
+                <input type="text" id="endereço" name="endereço"
+                    placeholder="Ex: Rua 10 lote 01 Cj B" class="form-input"
+                    aria-label="Endereço">
                 <span class="error" id="erro-endereco"></span><br>
-            
+
                 <!-- E-mail -->
                 <label for="email" class="form-label">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="Digite aqui seu E-mail" class="form-input" aria-label="E-mail">
+                <input type="email" id="email" name="email"
+                    placeholder="Digite aqui seu E-mail" class="form-input"
+                    aria-label="E-mail">
                 <span class="error" id="erro-email"></span><br>
-            
+
                 <!-- Produto Desejado -->
-                <label for="equipamento" class="form-label">Produto Desejado:</label>
-                <select id="equipamento" name="produto" class="form-input" aria-label="Produto desejado">
+                <label for="equipamento" class="form-label">Produto
+                    Desejado:</label>
+                <select id="equipamento" name="produto" class="form-input"
+                    aria-label="Produto desejado">
                     <option value="0">Selecione o seu produto</option>
                     <option value="#">Residencial - 3,35kWp</option>
                     <option value="#">Residencial - 10,35kWp</option>
@@ -83,29 +103,36 @@
                     <option value="#">Agronégocio - 75,0kWp</option>
                 </select>
                 <span class="error" id="erro-produto"></span><br>
-            
+
                 <!-- Senha e Confirmar Senha -->
                 <div class="input-group">
                     <div class="input-field">
                         <label for="senha" class="form-label">Senha:</label>
-                        <input type="password" id="senha" name="senha" placeholder="Crie sua senha" class="form-input" aria-label="Senha">
+                        <input type="password" id="senha" name="senha"
+                            placeholder="Crie sua senha" class="form-input"
+                            aria-label="Senha">
                         <span class="error" id="erro-senha"></span>
                     </div>
                     <div class="input-field">
-                        <label for="confirmar-senha" class="form-label">Confirme sua Senha:</label>
-                        <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirme sua senha" class="form-input" aria-label="Confirmar senha">
+                        <label for="confirmar-senha" class="form-label">Confirme
+                            sua Senha:</label>
+                        <input type="password" id="confirmar-senha"
+                            name="confirmar-senha"
+                            placeholder="Confirme sua senha" class="form-input"
+                            aria-label="Confirmar senha">
                         <span class="error" id="erro-confirmar-senha"></span>
                     </div>
                 </div>
-            
+
                 <!-- Botão de Envio -->
                 <button type="submit" class="btn-submit">Cadastrar</button>
             </form>
-        <footer class="footer">
-            <p>© 2024 TecnoSolar. Todos os direitos reservados.</p>
-        </footer> 
-        
-        <script src="Script/Cadastro.js"></script>
 
-    </body>
-</html>
+            <footer class="footer">
+                <p>© 2024 TecnoSolar. Todos os direitos reservados.</p>
+            </footer>
+
+            <script src="Script/Cadastro.js"></script>
+
+        </body>
+    </html>

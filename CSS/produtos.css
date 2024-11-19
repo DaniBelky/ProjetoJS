@@ -10,12 +10,14 @@
     margin: 10px;
     display: flex;
     flex-direction: column;
+   
 }
 
 
 .card-img {
     width: 100%;
     height: 180px;
+    border-radius: 10px;
 }
 
 .card-body {
@@ -24,7 +26,7 @@
     flex-direction: column;
     display: flex;
     height: auto;
-
+    gap: 6px;
 }
 
 .card-title {
@@ -41,6 +43,7 @@
 .card-price {
     font-size: 1.2em;
     color: #e74c3c;
+    text-align: center;
 }
 
 .card-button {
