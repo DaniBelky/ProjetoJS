@@ -52,3 +52,28 @@ function openCart() {
 function closeCart() {
         document.getElementById('cart').style.display = 'none';
     }
+
+    // botão de compra do carrinho
+    function proceedToCheckout() {
+        // Obter os itens do carrinho
+        const cartItems = document.querySelectorAll('#cartItems .cart-item');
+        const cartData = [];
+    
+        cartItems.forEach(item => {
+            const productText = item.querySelector('.cart-item-text').textContent;
+            const productImage = item.querySelector('.cart-item-image').src;
+    
+            cartData.push({
+                text: productText,
+                image: productImage
+            });
+        });
+    
+        // Salvar os dados do carrinho no localStorage
+        localStorage.setItem('cartData', JSON.stringify(cartData));
+        localStorage.setItem('totalPrice', total.toFixed(2));
+    
+        // Redirecionar para a página de checkout
+        window.location.href = 'checkout.html';
+    }
+    

@@ -58,7 +58,7 @@
 .conteiner {
     display: flex;
     text-align: center;
-    padding-left: 250px;
+    padding-left: 50px;
 }
 
 .conteiner>div>div>p {

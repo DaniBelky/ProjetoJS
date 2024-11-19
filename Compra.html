@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="CSS/Compra.css">
+</head>
+<body>
+    <nav>
+        <ul class="header-ul">
+            <li><img src="imagens/parafuso.png"></li>
+            <li><label>TECNOSOLAR</label></li>
+            <li><a href="inicio.html">Início</a></li>
+            <li><a href="Produtos.html">Produtos</a></li>
+            <li><a href="Cadastro.html">Cadastro VIP</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="Simulador1.html">Simulador de economia</a></li>
+
+        </ul>
+    </nav>
+<div class="Conteiner"> 
+    <h1 class="titulo">Checkout</h1>
+    <div id="checkoutItems" class="checkItems"></div>
+    <h2 id="checkoutTotal" class="checkTotal"></h2>
+
+    <form id="paymentForm" class="Form">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome e sobrenome" class="nome"><br>
+
+        <label for="address">Endereço:</label>
+        <input type="text" id="address" name="address" placeholder="Digite seu endereço" class="address" required><br>
+
+       
+     
+                <label for="cpf" class="Form">CPF </label>
+                <input type="text" id="cpf" name="cpf" maxlength="11"
+                    placeholder="Ex: 000.000.000-00" class="number"
+                    oninput="formatarCPF(this)"><br>
+            
+       
+                <label for="telefone" class="Form">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone"
+                    maxlength="11" pattern="[0-9]{10,11}"
+                    placeholder="Ex: 11987654321" class="number"
+                    oninput="apenasNumeros(this)"><br>
+          
+    
+        <label for="email" class="Form">E-mail:</label>
+                <input type="email" id="email" name="email"
+                    placeholder="Digite aqui seu E-mail" class="text"><br>
+
+        <label for="payment">Forma de pagamento:</label>
+        <select id="payment" name="payment" class="payment" required>
+            <option value="0">Selecione a forma de pagamento</option>
+            <option value="creditCard">Cartão de Crédito</option>
+            <option value="boleto">Boleto</option>
+            <option value="pix">PIX</option>
+        </select><br>
+
+        <button type="submit">Finalizar Compra</button>
+    </form>
+</div>
+
+    <script src="Script/Compra.js"></script>
+</body>
+</html>
